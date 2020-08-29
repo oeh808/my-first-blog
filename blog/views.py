@@ -6,7 +6,7 @@ from django.shortcuts import redirect
 from django.shortcuts import render, get_object_or_404
 
 def cv_view(request):
-    cv_view=None
+    return render(request, 'cv/cv_view.html')
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
