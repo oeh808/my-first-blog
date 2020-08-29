@@ -10,6 +10,6 @@ class NewVisitorTest(TestCase):
         found = resolve('/cv_view/')
         self.assertEqual(found.func, cv_view)
 
-    def test_cv_view_title_is_right(self):
+    def test_uses_cv_view_template(self):
         response = self.client.get('/cv_view/')
         self.assertTemplateUsed(response, 'cv/cv_view.html')
