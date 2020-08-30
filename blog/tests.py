@@ -21,4 +21,4 @@ class NewVisitorTest(TestCase):
         self.assertIn('<a href', html)
         self.assertIn('</a>', html)
 
-        self.assertIn('<a href="/cv_view/Contact_Details">', html)#Check for specific link now
+        self.assertIn('<a href="/cv_view/contact_details">', html)#Check for specific link now

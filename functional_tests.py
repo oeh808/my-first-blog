@@ -25,8 +25,8 @@ class NewVisitorTest(unittest.TestCase):
         self.browser.get('http://127.0.0.1:8000/cv_view')
         #The user starts reading through the cv, seeing a link to the contact details
         contact = self.browser.find_element_by_partial_link_text('Contact Details')
-        contact_link = self.browser.find_element_by_tag_name('a href="/cv_view/Contact_Details"')
-        self.assertEqual(contact,contact_link)
+        links = self.browser.find_elements_by_tag_name('a')
+        self.assertIn(contact,links)
 
 if __name__ == '__main__':
     unittest.main(warnings='ignore')
