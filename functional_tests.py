@@ -19,7 +19,7 @@ class NewVisitorTest(unittest.TestCase):
         #The user sees the title as Omar Hussein's CV and the header as CV
         self.assertIn('Omar Hussein\'s CV', self.browser.title)
         header_text = self.browser.find_element_by_tag_name('h1').text
-        self.assertIn('cv', header_text)#Working test'''
+        self.assertIn('cv', header_text)'''
 
     '''def test_site_contains_contact_details(self):
         self.browser.get('http://127.0.0.1:8000/cv_view')
@@ -34,7 +34,7 @@ class NewVisitorTest(unittest.TestCase):
         #This then shows the user the title Contact Details as well as a header for it.
         self.assertIn('Contact Details', self.browser.title)
         header_text = self.browser.find_element_by_tag_name('h1').text
-        self.assertIn('Contact Details', header_text)#Working test'''
+        self.assertIn('Contact Details', header_text)'''
 
     '''def test_contact_details_visible(self):
         self.browser.get('http://127.0.0.1:8000/cv_view/contact_details')
@@ -48,11 +48,10 @@ class NewVisitorTest(unittest.TestCase):
         self.assertIn('Telephone Number', headers[1].text)
         self.assertIn('Email Address', headers[2].text)'''
 
-        #The user finds that under each header, there is some text written for the user to view.
-
     '''def test_information_is_valid(self):
         self.browser.get('http://127.0.0.1:8000/cv_view/contact_details')
 
+        #The user finds that under each header, there is some text written for the user to view.
         paragraphs = self.browser.find_elements_by_tag_name('p')
 
         #The user finds the Address between the address header and number headers
@@ -64,7 +63,11 @@ class NewVisitorTest(unittest.TestCase):
 
     def test_go_back_button(self):
         #Satisified, the user then sees a go back button and decides to press it
+        self.browser.get('http://127.0.0.1:8000/cv_view/contact_details')
 
+        link = self.browser.find_element_by_partial_link_text('back')
+        link.click()
+        self.AssertNotIn('Contact Details', self.browser.title)
 
 
 if __name__ == '__main__':
