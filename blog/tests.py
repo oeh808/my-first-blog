@@ -6,6 +6,8 @@ from .views import cv_view
 
 class NewVisitorTest(TestCase):
 
+    #def decode_html():
+        #W.I.P
     def test_cv_view_exists(self):
         found = resolve('/cv_view/')
         self.assertEqual(found.func, cv_view)
@@ -16,9 +18,17 @@ class NewVisitorTest(TestCase):
 
     def test_cv_site_contains_a_link_to_contact_details(self):
         response = self.client.get('/cv_view/')
-
         html = response.content.decode('utf8')
+
         self.assertIn('<a href', html)
         self.assertIn('</a>', html)
 
         self.assertIn('<a href="/cv_view/contact_details">', html)#Check for specific link now
+
+    def test_contact_details_contain_the_three_headers(self):
+        response = self.client.get('/cv_view/contact_details')
+        html = response.content.decode('utf8')
+
+        self.assertIn('Physical Address', html)
+        self.assertIn('Telephone Number', html)
+        self.assertIn('Email Address', html)
