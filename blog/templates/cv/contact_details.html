@@ -1,20 +1,51 @@
+{% load static %}
+
 <html>
 <title>Contact Details</title>
-<header>
-  <h3><i><a href='http://127.0.0.1:8000/cv_view'>Go back</a></i></h3>
-</header>
+<head>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+</head>
+
+
 
 <body>
-  <h1>Contact Details:</h1>
 
-  <h2>Physical Address:</h2>
-  <p>495 Harborne Park road, Birmingham, Britain </p>
+  <div class="page-header">
+    {% if user.is_authenticated %}
+      <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+    {% endif %}
+    <h1><a href="/">Contact Details:</a></h1>
+  </div>
 
-  <h2>Telephone Number:</h2>
-  <p>07799177373</p>
+  <div class="content container">
+    <div class="row">
+      <div class="col-md-8">
+        {% block content %}
+        {% endblock %}
+      </div>
+      
+  <div>
+    <h2>Physical Address:</h2>
+    <p>495 Harborne Park road, Birmingham, Britain </p>
+  </div>
 
-  <h2>Email Address:</h2>
-  <p>omarehababdelaziz8@gmail.com</p>
+  <div>
+    <h2>Telephone Number:</h2>
+    <p>07799177373</p>
+  </div>
+
+  <div>
+    <h2>Email Address:</h2>
+    <p>omarehababdelaziz8@gmail.com</p>
+  </div>
+
+  <div>
+    <h3><i><a href='http://127.0.0.1:8000/cv_view'>Go back</a></i></h3>
+  </div>
+
 </body>
 
 </html>
