@@ -32,3 +32,10 @@ class NewVisitorTest(TestCase):
         self.assertIn('Physical Address', html)
         self.assertIn('Telephone Number', html)
         self.assertIn('Email Address', html)
+
+    def test_go_back_link_exists(self):
+        response = self.client.get('/cv_view/contact_details')
+        html = response.content.decode('utf8')
+
+        self.assertIn('Go back', html)
+        self.assertIn("a href='http://127.0.0.1:8000/cv_view'", html)

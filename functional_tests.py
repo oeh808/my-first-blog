@@ -61,7 +61,7 @@ class NewVisitorTest(unittest.TestCase):
         #The user then finds the email under the email headers
         self.assertIn('@', paragraphs[2].text)'''
 
-    def test_go_back_button(self):
+    def test_go_back_link(self):
         #Satisified, the user then sees a go back button and decides to press it
         self.browser.get('http://127.0.0.1:8000/cv_view/contact_details')
 
