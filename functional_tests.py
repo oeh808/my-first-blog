@@ -61,13 +61,36 @@ class NewVisitorTest(unittest.TestCase):
         #The user then finds the email under the email headers
         self.assertIn('@', paragraphs[2].text)'''
 
-    def test_go_back_link(self):
+    '''def test_go_back_link_contact(self):
         #Satisified, the user then sees a go back button and decides to press it
         self.browser.get('http://127.0.0.1:8000/cv_view/contact_details')
 
         link = self.browser.find_element_by_partial_link_text('back')
         link.click()
-        self.assertNotIn('Contact Details', self.browser.title)
+        self.assertNotIn('Contact Details', self.browser.title)'''
+
+    '''def test_site_contains_personal_profile(self):
+        self.browser.get('http://127.0.0.1:8000/cv_view')
+        #The user then finds a link to the personal profile
+        profile = self.browser.find_element_by_partial_link_text('Personal Profile')
+        links = self.browser.find_elements_by_tag_name('a')
+        self.assertIn(profile,links)
+
+        #The user clicks the link to view the contact Details
+        profile.click()
+
+        #This then shows the user the title and header; Personal Profile
+        self.assertIn('Personal Profile', self.browser.title)
+        header_text = self.browser.find_element_by_tag_name('h1').text
+        self.assertIn('Personal Profile', header_text)'''
+
+    '''def test_go_back_link_profile(self):
+        #Satisified, the user then sees a go back button and decides to press it
+        self.browser.get('http://127.0.0.1:8000/cv_view/personal_profile')
+
+        link = self.browser.find_element_by_partial_link_text('back')
+        link.click()
+        self.assertNotIn('Personal Profile', self.browser.title)'''
 
 
 if __name__ == '__main__':

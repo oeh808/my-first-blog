@@ -33,8 +33,33 @@ class NewVisitorTest(TestCase):
         self.assertIn('Telephone Number', html)
         self.assertIn('Email Address', html)
 
-    def test_go_back_link_exists(self):
+    def test_go_back_link_exists_contact(self):
         response = self.client.get('/cv_view/contact_details')
+        html = response.content.decode('utf8')
+
+        self.assertIn('Go back', html)
+        self.assertIn("a href='http://127.0.0.1:8000/cv_view'", html)
+
+    def test_cv_site_contains_a_link_to_personal_profile(self):
+        response = self.client.get('/cv_view/')
+        html = response.content.decode('utf8')
+
+        self.assertIn('<a href="/cv_view/personal_profile">', html)#Check for specific link now
+
+    def test_personal_profile_contains_header(self):
+        response = self.client.get('http://127.0.0.1:8000/cv_view/personal_profile')
+        html = response.content.decode('utf8')
+
+        self.assertIn('Personal Profile', html)
+
+    def test_personal_profile_contains_description(self):
+        response = self.client.get('http://127.0.0.1:8000/cv_view/personal_profile')
+        html = response.content.decode('utf8')
+
+        self.assertIn('<p>', html)
+
+    def test_go_back_link_exists_profile(self):
+        response = self.client.get('/cv_view/personal_profile')
         html = response.content.decode('utf8')
 
         self.assertIn('Go back', html)

@@ -1,5 +1,17 @@
+{% load static %}
+
 <html>
-    <title>Omar Hussein's CV</title>
-    <h1>cv</h1>
-    <a href="/cv_view/contact_details">Contact Details</a>
+  <title>Omar Hussein's CV</title>
+  <head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+  </head>
+
+  <div class="page-header">
+    <h1>CV</h1>
+  </div>
+  <h1><u><a href="/cv_view/contact_details">Contact Details</a></u></h1>
+  <h1><u><a href="/cv_view/personal_profile">Personal Profile</a></u></h1>
 </html>
