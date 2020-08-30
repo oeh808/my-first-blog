@@ -28,5 +28,8 @@ class NewVisitorTest(unittest.TestCase):
         links = self.browser.find_elements_by_tag_name('a')
         self.assertIn(contact,links)
 
+        #The user clicks the link to view the contact Details
+        contact.click()
+
 if __name__ == '__main__':
     unittest.main(warnings='ignore')
