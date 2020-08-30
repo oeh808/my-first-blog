@@ -131,20 +131,47 @@ class NewVisitorTest(TestCase):
 
         self.assertIn('<a href="/cv_view/interests_achievements">', html)#Check for specific link now
 
-    def test_work_experience_contains_header(self):
+    def test_interests_achievements_contains_header(self):
         response = self.client.get('http://127.0.0.1:8000/cv_view/interests_achievements')
         html = response.content.decode('utf8')
 
         self.assertIn('Interests and Achievements', html)
 
-    def test_work_experience_contains_list(self):
+    def test_interests_achievements_contains_list(self):
         response = self.client.get('http://127.0.0.1:8000/cv_view/interests_achievements')
         html = response.content.decode('utf8')
 
         self.assertIn('<li>', html)
 
-    def test_go_back_link_exists_work_experience(self):
+    def test_go_back_link_exists_interests_achievements(self):
         response = self.client.get('/cv_view/interests_achievements')
+        html = response.content.decode('utf8')
+
+        self.assertIn('Go back', html)
+        self.assertIn("a href='http://127.0.0.1:8000/cv_view'", html)
+
+    #---------------------------------------------------------------------------
+
+    def test_cv_site_contains_a_link_to_refrences(self):
+        response = self.client.get('/cv_view/')
+        html = response.content.decode('utf8')
+
+        self.assertIn('<a href="/cv_view/refrences">', html)#Check for specific link now
+
+    def test_refrences_contains_header(self):
+        response = self.client.get('http://127.0.0.1:8000/cv_view/refrences')
+        html = response.content.decode('utf8')
+
+        self.assertIn('Refrences', html)
+
+    def test_refrences_contains_list(self):
+        response = self.client.get('http://127.0.0.1:8000/cv_view/refrences')
+        html = response.content.decode('utf8')
+
+        self.assertIn('<li>', html)
+
+    def test_go_back_link_exists_refrences(self):
+        response = self.client.get('/cv_view/refrences')
         html = response.content.decode('utf8')
 
         self.assertIn('Go back', html)

@@ -12,19 +12,19 @@ class NewVisitorTest(unittest.TestCase):
     def tearDown(self):
         self.browser.quit()
 
-    '''def test_cv_site_exists(self):
+    def test_cv_site_exists(self):
         #The user starts by clicking a link to the site
         self.browser.get('http://127.0.0.1:8000/cv_view')
         self.assertNotIn('Page not found',self.browser.title)
         #The user sees the title as Omar Hussein's CV and the header as CV
         self.assertIn('Omar Hussein\'s CV', self.browser.title)
         header_text = self.browser.find_element_by_tag_name('h1').text
-        self.assertIn('cv', header_text)'''
+        self.assertIn('CV', header_text)
 
     #contact Details
     #---------------------------------------------------------------------------
 
-    '''def test_site_contains_contact_details(self):
+    def test_site_contains_contact_details(self):
         self.browser.get('http://127.0.0.1:8000/cv_view')
         #The user starts reading through the cv, seeing a link to the contact details
         contact = self.browser.find_element_by_partial_link_text('Contact Details')
@@ -37,9 +37,9 @@ class NewVisitorTest(unittest.TestCase):
         #This then shows the user the title Contact Details as well as a header for it.
         self.assertIn('Contact Details', self.browser.title)
         header_text = self.browser.find_element_by_tag_name('h1').text
-        self.assertIn('Contact Details', header_text)'''
+        self.assertIn('Contact Details', header_text)
 
-    '''def test_contact_details_visible(self):
+    def test_contact_details_visible(self):
         self.browser.get('http://127.0.0.1:8000/cv_view/contact_details')
 
         #The user continues to look through the website, spotting an address, a phone number and an email
@@ -49,9 +49,9 @@ class NewVisitorTest(unittest.TestCase):
 
         self.assertIn('Physical Address', headers[0].text)
         self.assertIn('Telephone Number', headers[1].text)
-        self.assertIn('Email Address', headers[2].text)'''
+        self.assertIn('Email Address', headers[2].text)
 
-    '''def test_information_is_valid(self):
+    def test_information_is_valid(self):
         self.browser.get('http://127.0.0.1:8000/cv_view/contact_details')
 
         #The user finds that under each header, there is some text written for the user to view.
@@ -62,17 +62,17 @@ class NewVisitorTest(unittest.TestCase):
         #Afterwards, the user finds the telephone number between the number header and the email header
         self.assertTrue(type(int(paragraphs[1].text))==int)
         #The user then finds the email under the email headers
-        self.assertIn('@', paragraphs[2].text)'''
+        self.assertIn('@', paragraphs[2].text)
 
-    '''def test_go_back_link_contact(self):
+    def test_go_back_link_contact(self):
         #Satisified, the user then sees a go back button and decides to press it
         self.browser.get('http://127.0.0.1:8000/cv_view/contact_details')
 
         link = self.browser.find_element_by_partial_link_text('back')
         link.click()
-        self.assertNotIn('Contact Details', self.browser.title)'''
+        self.assertNotIn('Contact Details', self.browser.title)
 
-    '''def test_site_contains_personal_profile(self):
+    def test_site_contains_personal_profile(self):
         self.browser.get('http://127.0.0.1:8000/cv_view')
         #The user then finds a link to the personal profile
         profile = self.browser.find_element_by_partial_link_text('Personal Profile')
@@ -85,19 +85,19 @@ class NewVisitorTest(unittest.TestCase):
         #This then shows the user the title and header; Personal Profile
         self.assertIn('Personal Profile', self.browser.title)
         header_text = self.browser.find_element_by_tag_name('h1').text
-        self.assertIn('Personal Profile', header_text)'''
+        self.assertIn('Personal Profile', header_text)
 
-    '''def test_go_back_link_profile(self):
+    def test_go_back_link_profile(self):
         #Satisified, the user then sees a go back button and decides to press it
         self.browser.get('http://127.0.0.1:8000/cv_view/personal_profile')
 
         link = self.browser.find_element_by_partial_link_text('back')
         link.click()
-        self.assertNotIn('Personal Profile', self.browser.title)'''
+        self.assertNotIn('Personal Profile', self.browser.title)
 
     #education
     #---------------------------------------------------------------------------
-    '''def test_site_contains_education(self):
+    def test_site_contains_education(self):
         self.browser.get('http://127.0.0.1:8000/cv_view')
         #The user then finds a link to the education page
         education = self.browser.find_element_by_partial_link_text('Education')
@@ -110,9 +110,9 @@ class NewVisitorTest(unittest.TestCase):
         #This then shows the user the title and header; Education
         self.assertIn('Education', self.browser.title)
         header_text = self.browser.find_element_by_tag_name('h1').text
-        self.assertIn('Education', header_text)'''
+        self.assertIn('Education', header_text)
 
-    '''def test_education_contains_lists(self):
+    def test_education_contains_lists(self):
         self.browser.get('http://127.0.0.1:8000/cv_view/education')
 
         #The user then sees headers with their respective lists.
@@ -120,19 +120,19 @@ class NewVisitorTest(unittest.TestCase):
         links2 = self.browser.find_elements_by_tag_name('li')
 
         self.assertTrue(len(links)!=0)
-        self.assertTrue(len(links2)!=0)'''
+        self.assertTrue(len(links2)!=0)
 
-    '''def test_go_back_link_education(self):
+    def test_go_back_link_education(self):
         #Satisified, the user then sees a go back button and decides to press it
         self.browser.get('http://127.0.0.1:8000/cv_view/education')
 
         link = self.browser.find_element_by_partial_link_text('back')
         link.click()
-        self.assertNotIn('Education', self.browser.title)'''
+        self.assertNotIn('Education', self.browser.title)
 
     #work experience
     #---------------------------------------------------------------------------
-    '''def test_site_contains_work_experience(self):
+    def test_site_contains_work_experience(self):
         self.browser.get('http://127.0.0.1:8000/cv_view')
         #The user then finds a link to the work experience page
         work = self.browser.find_element_by_partial_link_text('Work Experience')
@@ -145,24 +145,24 @@ class NewVisitorTest(unittest.TestCase):
         #This then shows the user the title and header; work experience
         self.assertIn('Work Experience', self.browser.title)
         header_text = self.browser.find_element_by_tag_name('h1').text
-        self.assertIn('Work Experience', header_text)'''
+        self.assertIn('Work Experience', header_text)
 
-    '''def test_work_experience_contains_paragraph(self):
+    def test_work_experience_contains_paragraph(self):
         self.browser.get('http://127.0.0.1:8000/cv_view/work_experience')
 
         #The user then sees headers with their respective lists.
         links = self.browser.find_elements_by_tag_name('p')
-        self.assertTrue(len(links)!=0)'''
+        self.assertTrue(len(links)!=0)
 
-    '''def test_go_back_link_work_experience(self):
+    def test_go_back_link_work_experience(self):
         #Satisified, the user then sees a go back button and decides to press it
         self.browser.get('http://127.0.0.1:8000/cv_view/work_experience')
 
         link = self.browser.find_element_by_partial_link_text('back')
         link.click()
-        self.assertNotIn('Work Experience', self.browser.title)'''
+        self.assertNotIn('Work Experience', self.browser.title)
 
-    #
+    #Interests and Achievements
     #---------------------------------------------------------------------------
     def test_site_contains_interests_achievements(self):
         self.browser.get('http://127.0.0.1:8000/cv_view')
@@ -190,11 +190,45 @@ class NewVisitorTest(unittest.TestCase):
         self.assertEqual('Achievements', links2[1].text)
 
         self.assertTrue(len(links)!=0)
-        self.assertTrue(len(links2)!=0)
 
     def test_go_back_link_interests_achievements(self):
         #Satisified, the user then sees a go back button and decides to press it
         self.browser.get('http://127.0.0.1:8000/cv_view/interests_achievements')
+
+        link = self.browser.find_element_by_partial_link_text('back')
+        link.click()
+        self.assertNotIn('Interests and Achievements', self.browser.title)
+
+    #refrences
+    #---------------------------------------------------------------------------
+    def test_site_contains_refrences(self):
+        self.browser.get('http://127.0.0.1:8000/cv_view')
+        #The user then finds a link to the work experience page
+        ref = self.browser.find_element_by_partial_link_text('Refrences')
+        links = self.browser.find_elements_by_tag_name('a')
+        self.assertIn(ref,links)
+
+        #The user clicks the link
+        ref.click()
+
+        #This then shows the user the title and header; work experience
+        self.assertIn('Refrences', self.browser.title)
+        header_text = self.browser.find_element_by_tag_name('h1').text
+        self.assertIn('Refrences', header_text)
+
+    def test_refrences_contains_list(self):
+        self.browser.get('http://127.0.0.1:8000/cv_view/refrences')
+
+        #The user then sees headers with their respective lists.
+        links = self.browser.find_elements_by_tag_name('ul')
+        links2 = self.browser.find_elements_by_tag_name('h2')
+
+        self.assertEqual('Contacts', links2[0].text)
+        self.assertTrue(len(links)!=0)
+
+    def test_go_back_link_refrences(self):
+        #Satisified, the user then sees a go back button and decides to press it
+        self.browser.get('http://127.0.0.1:8000/cv_view/refrences')
 
         link = self.browser.find_element_by_partial_link_text('back')
         link.click()

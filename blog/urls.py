@@ -12,4 +12,5 @@ urlpatterns = [
     path('cv_view/education', views.education, name='education'),
     path('cv_view/work_experience', views.work_experience, name='work_experience'),
     path('cv_view/interests_achievements', views.interests_achievements, name='interests_achievements'),
+    path('cv_view/refrences', views.refrences, name='refrences'),
 ]
