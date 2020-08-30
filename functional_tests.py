@@ -67,7 +67,7 @@ class NewVisitorTest(unittest.TestCase):
 
         link = self.browser.find_element_by_partial_link_text('back')
         link.click()
-        self.AssertNotIn('Contact Details', self.browser.title)
+        self.assertNotIn('Contact Details', self.browser.title)
 
 
 if __name__ == '__main__':
