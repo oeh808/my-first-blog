@@ -13,3 +13,12 @@ class NewVisitorTest(TestCase):
     def test_uses_cv_view_template(self):
         response = self.client.get('/cv_view/')
         self.assertTemplateUsed(response, 'cv/cv_view.html')
+
+    def test_cv_site_contains_a_link_to_contact_details(self):
+        response = self.client.get('/cv_view/')
+
+        html = response.content.decode('utf8')
+        self.assertIn('<a href', html)
+        self.assertIn('</a>', html)
+
+        self.assertIn('<a href="/cv_view/Contact_Details">', html)#Check for specific link now
