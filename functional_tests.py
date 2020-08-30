@@ -92,6 +92,38 @@ class NewVisitorTest(unittest.TestCase):
         link.click()
         self.assertNotIn('Personal Profile', self.browser.title)'''
 
+    '''def test_site_contains_education(self):
+        self.browser.get('http://127.0.0.1:8000/cv_view')
+        #The user then finds a link to the education page
+        education = self.browser.find_element_by_partial_link_text('Education')
+        links = self.browser.find_elements_by_tag_name('a')
+        self.assertIn(education,links)
+
+        #The user clicks the link
+        education.click()
+
+        #This then shows the user the title and header; Education
+        self.assertIn('Education', self.browser.title)
+        header_text = self.browser.find_element_by_tag_name('h1').text
+        self.assertIn('Education', header_text)'''
+
+    '''def test_education_contains_lists(self):
+        self.browser.get('http://127.0.0.1:8000/cv_view/education')
+
+        #The user then sees headers with their respective lists.
+        links = self.browser.find_elements_by_tag_name('h2')
+        links2 = self.browser.find_elements_by_tag_name('li')
+
+        self.assertTrue(len(links)!=0)
+        self.assertTrue(len(links2)!=0)'''
+
+    '''def test_go_back_link_education(self):
+        #Satisified, the user then sees a go back button and decides to press it
+        self.browser.get('http://127.0.0.1:8000/cv_view/education')
+
+        link = self.browser.find_element_by_partial_link_text('back')
+        link.click()
+        self.assertNotIn('Education', self.browser.title)'''
 
 if __name__ == '__main__':
     unittest.main(warnings='ignore')

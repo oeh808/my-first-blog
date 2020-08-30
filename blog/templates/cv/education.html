@@ -1,0 +1,51 @@
+{% load static %}
+
+<html>
+  <title>Education</title>
+  <head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+  </head>
+  <body>
+    <div class="page-header">
+      <h1>Education</h1>
+    </div>
+
+    <div class="content container">
+      <div class="row">
+        <div class="col-md-8">
+          {% block content %}
+          {% endblock %}
+        </div>
+
+    <div>
+      <h2>School</h2>
+      <ul>
+        <li>Studied at the international Cairo English School in Egypt</li>
+        <li>Recieved high achiever award for AS computer science</li>
+        <li>Was chosen as valedictorian for my year group's graduation</li>
+        <li>Learned how to use python</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2>University</h2>
+      <ul>
+        <li>Currently doing an MSCI(Third year) in computer science at the University of Birmingham</li>
+        <li>Group Project for a game written in Java</li>
+        <li>Robotics project - Programming a lejos robot to navigate a maze</li>
+        <li>Software Engineering Project - Worked on a mock product using software engineering methods
+           such as UML diagrams and requirements specification</li>
+        <li>Learned how to code in Java</li>
+        <li>Learned how to code in C</li>
+        <li>Learned about systems programming in C language</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3><i><a href='http://127.0.0.1:8000/cv_view'>Go back</a></i></h3>
+    </div>
+  </body>
+</html>
