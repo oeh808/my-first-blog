@@ -147,11 +147,16 @@ class NewVisitorTest(unittest.TestCase):
         header_text = self.browser.find_element_by_tag_name('h1').text
         self.assertIn('Work Experience', header_text)
 
-    def test_work_experience_contains_paragraph(self):
+    def test_work_experience_contains_list(self):
         self.browser.get('http://127.0.0.1:8000/cv_view/work_experience')
 
         #The user then sees headers with their respective lists.
-        links = self.browser.find_elements_by_tag_name('p')
+        links = self.browser.find_elements_by_tag_name('ul')
+        links2 = self.browser.find_elements_by_tag_name('h2')
+
+        self.assertEqual('Interests', links2[0].text)
+        self.assertEqual('Achievements', links2[1].text)
+
         self.assertTrue(len(links)!=0)
 
     def test_go_back_link_work_experience(self):
@@ -174,7 +179,7 @@ class NewVisitorTest(unittest.TestCase):
         #The user clicks the link
         iAndA.click()
 
-        #This then shows the user the title and header; work experience
+        #This then shows the user the title and header; Interests and Achievements
         self.assertIn('Interests and Achievements', self.browser.title)
         header_text = self.browser.find_element_by_tag_name('h1').text
         self.assertIn('Interests and Achievements', header_text)
@@ -211,7 +216,7 @@ class NewVisitorTest(unittest.TestCase):
         #The user clicks the link
         ref.click()
 
-        #This then shows the user the title and header; work experience
+        #This then shows the user the title and header; refrences
         self.assertIn('Refrences', self.browser.title)
         header_text = self.browser.find_element_by_tag_name('h1').text
         self.assertIn('Refrences', header_text)
@@ -235,7 +240,7 @@ class NewVisitorTest(unittest.TestCase):
         self.assertNotIn('Interests and Achievements', self.browser.title)
 
     #---------------------------------------------------------------------------
-    
+
 
 
 if __name__ == '__main__':

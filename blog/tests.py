@@ -110,11 +110,11 @@ class NewVisitorTest(TestCase):
 
         self.assertIn('Work Experience', html)
 
-    def test_work_experience_contains_text(self):
+    def test_work_experience_contains_list(self):
         response = self.client.get('http://127.0.0.1:8000/cv_view/work_experience')
         html = response.content.decode('utf8')
 
-        self.assertIn('<p>', html)
+        self.assertIn('<li>', html)
 
     def test_go_back_link_exists_work_experience(self):
         response = self.client.get('/cv_view/work_experience')
