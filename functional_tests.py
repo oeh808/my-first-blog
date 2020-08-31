@@ -234,6 +234,9 @@ class NewVisitorTest(unittest.TestCase):
         link.click()
         self.assertNotIn('Interests and Achievements', self.browser.title)
 
+    #---------------------------------------------------------------------------
+    
+
 
 if __name__ == '__main__':
     unittest.main(warnings='ignore')
