@@ -23,15 +23,18 @@
     <div>
       <h2>Interests</h2>
       <ul>
-        <li>Reading</li>
-        <li>Gaming</li>
-        <li>Coding</li>
+        {% for i in interests %}
+          <li>{{ i.text }}</li>
+        {% endfor %}
     </div>
 
     <div>
       <h2>Achievements</h2>
       <ul>
-        <li>Earned a high achiever in AS computer science</li>
+        {% for i in achievs %}
+          <li>{{ i.text }}</li>
+        {% endfor %}
+      </ul>
     </div>
 
     <div>

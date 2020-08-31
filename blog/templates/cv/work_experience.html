@@ -23,7 +23,9 @@
     <div>
       <h2>So far...</h2>
       <ul>
-        <li>None yet!</li>
+        {% for i in work %}
+          <li>{{ i.text }}</li>
+        {% endfor %}
       </ul>
     </div>
 

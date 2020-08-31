@@ -23,23 +23,18 @@
     <div>
       <h2>School</h2>
       <ul>
-        <li>Studied at the international Cairo English School in Egypt</li>
-        <li>Was chosen as valedictorian for my year group's graduation</li>
-        <li>Learned how to use python</li>
+        {% for i in school %}
+          <li>{{ i.text }}</li>
+        {% endfor %}
       </ul>
     </div>
 
     <div>
       <h2>University</h2>
       <ul>
-        <li>Currently doing an MSCI(Third year) in computer science at the University of Birmingham</li>
-        <li>Group Project for a game written in Java</li>
-        <li>Robotics project - Programming a lejos robot to navigate a maze</li>
-        <li>Software Engineering Project - Worked on a mock product using software engineering methods
-           such as UML diagrams and requirements specification</li>
-        <li>Learned how to code in Java</li>
-        <li>Learned how to code in C</li>
-        <li>Learned about systems programming in C language</li>
+        {% for i in uni %}
+          <li>{{ i.text }}</li>
+        {% endfor %}
       </ul>
     </div>
 

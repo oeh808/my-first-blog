@@ -19,16 +19,22 @@ def personal_profile(request):
     return render(request, 'cv/personal_profile.html', {'me': me})
 
 def education(request):
-    return render(request, 'cv/education.html')
+    school = cvList.objects.filter(pageTitle='School')
+    uni = cvList.objects.filter(pageTitle='University')
+    return render(request, 'cv/education.html', {'school' : school, 'uni' : uni})
 
 def work_experience(request):
-    return render(request, 'cv/work_experience.html')
+    work = cvList.objects.filter(pageTitle='Work Experience')
+    return render(request, 'cv/work_experience.html', {'work': work})
 
 def interests_achievements(request):
-    return render(request, 'cv/interests_achievements.html')
+    interests = cvList.objects.filter(pageTitle='Interests')
+    achievs = cvList.objects.filter(pageTitle='Achievements')
+    return render(request, 'cv/interests_achievements.html', {'interests' : interests, 'achievs' : achievs})
 
 def refrences(request):
-    return render(request, 'cv/refrences.html')
+    ref = cvList.objects.filter(pageTitle='References')
+    return render(request, 'cv/refrences.html', {'ref' : ref})
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')

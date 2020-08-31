@@ -23,7 +23,9 @@
     <div>
       <h2>Contacts</h2>
       <ul>
-        <li>None Yet!</li>
+        {% for i in ref %}
+          <li>{{ i.text }}</li>
+        {% endfor %}
       </ul>
     </div>
 
