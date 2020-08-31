@@ -22,8 +22,11 @@
 
     <div>
       <h2>About Me</h2>
-      <p>My name is Omar Hussein, I am currently an MSci student in the university of Birmingham.
-         I aspire to be a game developer/programmer in the future after finishing my degree.</p>
+      <p>
+        {% for i in me %}
+          {{ i.text }}
+        {% endfor %}
+      </p>
     </div>
 
     <div>

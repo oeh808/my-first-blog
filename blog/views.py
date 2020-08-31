@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.utils import timezone
-from .models import Post
+from .models import Post, cvText, cvList
 from .forms import PostForm
 from django.shortcuts import redirect
 from django.shortcuts import render, get_object_or_404
@@ -9,10 +9,14 @@ def cv_view(request):
     return render(request, 'cv/cv_view.html')
 
 def contact_details(request):
-    return render(request, 'cv/contact_details.html')
+    address = cvText.objects.filter(pageTitle='Physical Address')
+    number = cvText.objects.filter(pageTitle='Telephone Number')
+    email = cvText.objects.filter(pageTitle='Email Address')
+    return render(request, 'cv/contact_details.html', {'address': address,'number': number, 'email': email })
 
 def personal_profile(request):
-    return render(request, 'cv/personal_profile.html')
+    me = cvText.objects.filter(pageTitle='About Me')
+    return render(request, 'cv/personal_profile.html', {'me': me})
 
 def education(request):
     return render(request, 'cv/education.html')

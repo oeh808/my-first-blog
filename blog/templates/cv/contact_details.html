@@ -24,19 +24,32 @@
         {% endblock %}
       </div>
 
+
   <div>
     <h2>Physical Address</h2>
-    <p>495 Harborne Park road, Birmingham, Britain </p>
+    <p>
+      {% for i in address %}
+        {{ i.text }}
+      {% endfor %}
+    </p>
   </div>
 
   <div>
     <h2>Telephone Number</h2>
-    <p>07799177373</p>
+    <p>
+      {% for i in number %}
+        {{ i.text }}
+      {% endfor %}
+    </p>
   </div>
 
   <div>
     <h2>Email Address</h2>
-    <p>omarehababdelaziz8@gmail.com</p>
+    <p>
+      {% for i in email %}
+        {{ i.text }}
+      {% endfor %}
+    </p>
   </div>
 
   <div>

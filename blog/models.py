@@ -12,6 +12,26 @@ class Post(models.Model):
     def publish(self):
         self.published_date = timezone.now()
         self.save()
-        
+
     def __str__(self):
         return self.title
+
+class cvText(models.Model):
+    pageTitle = models.TextField(default="New Page")
+    text = models.TextField()
+
+    def update(self):
+        self.save()
+
+    def __str__(self):
+        return self.pageTitle
+
+class cvList(models.Model):
+    pageTitle = models.TextField(default="New Page")
+    text = models.TextField()
+
+    def update(self):
+        self.save()
+
+    def __str__(self):
+        return self.pageTitle
